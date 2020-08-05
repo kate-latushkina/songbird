@@ -1,0 +1,11 @@
+main {
+  margin: 30px auto;
+}
+div, ul, img {
+  border-radius: 10px;
+}
+.birds-choices {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

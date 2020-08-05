@@ -1,0 +1,13 @@
+.guess-bird {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+.guess-img {
+  width: 200px;
+  border: 1px solid black;
+}
+.guess-bird-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
