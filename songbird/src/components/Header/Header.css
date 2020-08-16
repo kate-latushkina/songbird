@@ -1,0 +1,14 @@
+.birds-group {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.header-category {
+  user-select: none;
+  border: 0 !important;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: 0 !important;
+  background-color: inherit !important;
+}

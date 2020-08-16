@@ -4,7 +4,7 @@ import './NextLevelButton.css'
 export default class NextLevelButton extends Component {
   render() {
     return (
-      <button className='btn btn-success'>Next Level</button>
+      <button className='btn btn-success' disabled>Next Level</button>
     )
   }
 }

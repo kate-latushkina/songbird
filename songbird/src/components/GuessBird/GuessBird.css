@@ -2,12 +2,22 @@
   width: 100%;
   border: 1px solid black;
   padding: 10px 20px;
+  display: flex;
 }
 .guess-img {
   width: 200px;
-  border: 1px solid black;
+  height: 150px;
+  /* object-fit: cover; */
+  background-color: white;
 }
 .guess-bird-name {
   font-size: 2rem;
   font-weight: bold;
+}
+.birds-audio {
+  width: 600px;
+  display: flex;
+}
+.guess-info {
+  margin-left: 30px;
 }

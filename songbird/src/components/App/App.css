@@ -1,5 +1,6 @@
 main {
   margin: 30px auto;
+  color: white !important;
 }
 div, ul, img {
   border-radius: 10px;
