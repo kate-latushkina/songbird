@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import guess from '../../assets/img/guess.png';
+import guess from '../../assets/img/guess.jpg';
 
 
 export default class QuestionBox extends Component {

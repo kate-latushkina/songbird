@@ -7,8 +7,7 @@
 .guess-img {
   width: 200px;
   height: 150px;
-  /* object-fit: cover; */
-  background-color: white;
+  object-fit: cover;
 }
 .guess-bird-name {
   font-size: 2rem;
