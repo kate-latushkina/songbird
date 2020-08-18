@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import GuessBird from './components/GuessBird/GuessBird';
 import './components/utils/bootstrap.min.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<GuessBird />, document.getElementById('root'));

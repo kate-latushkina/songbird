@@ -2,9 +2,18 @@ import React, {Component} from 'react';
 import './NextLevelButton.css'
 
 export default class NextLevelButton extends Component {
+  constructor() {
+    super()
+    this.onClickNextButton = this.onClickNextButton.bind(this)
+  }
+  onClickNextButton() {
+    this.props.clickNextLevelButton()
+  }
   render() {
+    const {correctAnswer} = this.props
     return (
-      <button className='btn btn-success' disabled>Next Level</button>
+      <button className={correctAnswer ? 'btn btn-success' : 'btn disactive'} onClick={this.onClickNextButton}>Next Level</button>
     )
   }
+  
 }
