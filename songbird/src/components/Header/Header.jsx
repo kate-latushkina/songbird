@@ -16,7 +16,7 @@ export default class Header extends Component {
       const { id, groupName } = group;
       return (
         <li key={id} className={
-          (id === level) ? "active list-group-item header-category col-12 col-sm-6 col-md-2" : "list-group-item header-category col-12 col-sm-6 col-md-2"
+          (id === level) ? "active list-group-item header-category col-6 col-md-2" : "list-group-item header-category col-6 col-md-2"
           }>{groupName}</li>
       )
     })

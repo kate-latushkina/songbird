@@ -1,9 +1,6 @@
 .choices-block {
   width: 45%;
 }
-.birds-choices {
-  height: 300px;
-}
 .choices-items {
   cursor: pointer;
 }
