@@ -12,7 +12,7 @@ export default class NextLevelButton extends Component {
   render() {
     const {correctAnswer} = this.props
     return (
-      <button className={correctAnswer ? 'btn btn-success' : 'btn disactive'} onClick={this.onClickNextButton}>Next Level</button>
+      <button className={correctAnswer ? 'btn btn-success' : 'btn disactive'} onClick={this.onClickNextButton}>Следующий уровень</button>
     )
   }
   

@@ -10,6 +10,8 @@ import QuestionBox from '../QuestionBlock/QuestionBlock';
 import NextLevelButton from '../NextLevelButton/NextLevelButton';
 import Header from '../Header/Header';
 import Title from '../Title/Title';
+import EndGame from '../EndGame/EndGame';
+import TryAgainButton from '../TryAgainButton/TryAgainButton';
 
 export default class GuessBird extends Component {
   constructor() {
@@ -20,7 +22,9 @@ export default class GuessBird extends Component {
       correctAnswer: false,
       activeBirdId: 0,
       randomNumBird: 0,
+      score: 0,
     }
+    this.preScore = 5
     this.audio = new Audio();
     this.clickBird = this.clickBird.bind(this)
     this.clickNextLevelButton = this.clickNextLevelButton.bind(this)
@@ -31,41 +35,59 @@ export default class GuessBird extends Component {
   }
 
   render() {
-    const arrBirds = birdsData[this.state.level]
-    console.log('correct answer - ' + arrBirds[this.state.randomNumBird].name)
-    return (
-      <main className='container'>
-        <Title />
-        <Header level={this.state.level}/>
-        <div>
-        <div>
-          <QuestionBox currentBird={arrBirds[this.state.randomNumBird]} correctAnswer={this.state.correctAnswer} />
-          <div className='birds-choices'>
-            <Choices birdsGroup={arrBirds} clickBird={this.clickBird} />
-            <BirdCard birdsGroup={arrBirds} activeBirdId={this.state.activeBirdId} clickBirdStatus={this.state.clickBirdStatus} level={this.state.level} />
+    if (this.state.level < 6) {
+      const { correctAnswer, randomNumBird, activeBirdId, clickBirdStatus, level, score } = this.state;
+      const arrBirds = birdsData[level]
+      console.log('correct answer - ' + arrBirds[randomNumBird].name)
+      return (
+        <main className='container'>
+          <Title score={score} />
+          <Header level={level} />
+          <div>
+            <div>
+              <QuestionBox currentBird={arrBirds[randomNumBird]} correctAnswer={correctAnswer} />
+              <div className='birds-choices'>
+                <Choices birdsGroup={arrBirds} clickBird={this.clickBird} />
+                <BirdCard birdsGroup={arrBirds} activeBirdId={activeBirdId} clickBirdStatus={clickBirdStatus} level={level} />
+              </div>
+            </div>
+            <NextLevelButton clickNextLevelButton={this.clickNextLevelButton} correctAnswer={correctAnswer} />
           </div>
-        </div>
-        <NextLevelButton clickNextLevelButton={this.clickNextLevelButton} correctAnswer={this.state.correctAnswer} />
-      </div>
-      </main>
-    )
+        </main>
+      )
+    } else {
+      return (
+        <main className='container'>
+          <Title score={this.state.score} />
+          <EndGame score={this.state.score} />
+          <TryAgainButton />
+        </main>
+      )
+    }
   }
 
   clickBird = (elem) => {
-    if (birdsData[this.state.level][this.state.randomNumBird].name === elem.textContent) {
-      this.isCorrectBird(elem)
-    } else {
-      this.isWrongBird(elem)
+    if (!this.state.correctAnswer) {
+      const { randomNumBird, level } = this.state;
+      if (birdsData[level][randomNumBird].name === elem.textContent) {
+        this.isCorrectBird(elem)
+      } else {
+        this.isWrongBird(elem)
+        this.preScore -= 1
+      }
     }
     this.setState({
       clickBirdStatus: true,
-      activeBirdId: elem.value
+      activeBirdId: elem.value,
     })
   }
   isCorrectBird(element) {
     (element.classList.contains('correct')) ? element.childNodes[0].classList.add('') : element.childNodes[0].classList.add('correct')
     playAudio(CORRECT_SOUND_PATH, this.audio)
-    this.setState({ correctAnswer: true })
+    this.setState({
+      correctAnswer: true,
+      score: this.preScore + this.state.score
+    })
   }
 
   isWrongBird(element) {
@@ -73,13 +95,14 @@ export default class GuessBird extends Component {
     playAudio(ERROR_SOUND_PATH, this.audio)
   }
   clickNextLevelButton = () => {
-    if(this.state.correctAnswer) {
+    if (this.state.correctAnswer) {
       const numLevel = this.state.level
       this.setState({
         level: numLevel + 1,
         correctAnswer: false,
         clickBirdStatus: false,
       })
+      this.preScore = 5
       this.componentDidMount()
       document.querySelectorAll('.li-btn').forEach((li) => {
         if (li.classList.contains('error')) {
