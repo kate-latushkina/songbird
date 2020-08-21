@@ -12,7 +12,6 @@ import Header from '../Header/Header';
 import Title from '../Title/Title';
 import EndGame from '../EndGame/EndGame';
 import TryAgainButton from '../TryAgainButton/TryAgainButton';
-// import Player from '../AudioPlayer/AudioPlayer';
 
 export default class GuessBird extends Component {
   constructor() {
@@ -98,7 +97,8 @@ export default class GuessBird extends Component {
       correctAnswer: true,
       score: this.preScore + this.state.score
     })
-    
+    const player = document.querySelector('.rhap_container audio');
+    player.pause();
   }
 
   isWrongBird(element) {
