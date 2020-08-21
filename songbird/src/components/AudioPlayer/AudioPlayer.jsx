@@ -5,7 +5,7 @@ import './AudioPlayer.css'
 
 export default class Player extends Component {
   render() {
-    const { src, isVolume } = this.props
+    const { src } = this.props
     return (
       <AudioPlayer
         src={src}
@@ -13,7 +13,7 @@ export default class Player extends Component {
         autoPlayAfterSrcChange={false}
         showJumpControls={false}
         customAdditionalControls={[]}
-        customControlsSection={(isVolume) ? [RHAP_UI.MAIN_CONTROLS, RHAP_UI.VOLUME_CONTROLS] : [RHAP_UI.MAIN_CONTROLS]}
+        customControlsSection={[RHAP_UI.MAIN_CONTROLS, RHAP_UI.VOLUME_CONTROLS]}
         layout='horizontal-reverse'
       />
     )

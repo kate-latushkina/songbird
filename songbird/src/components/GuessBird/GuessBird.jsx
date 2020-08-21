@@ -12,6 +12,7 @@ import Header from '../Header/Header';
 import Title from '../Title/Title';
 import EndGame from '../EndGame/EndGame';
 import TryAgainButton from '../TryAgainButton/TryAgainButton';
+// import Player from '../AudioPlayer/AudioPlayer';
 
 export default class GuessBird extends Component {
   constructor() {
@@ -60,7 +61,16 @@ export default class GuessBird extends Component {
         <main className='container'>
           <Title score={this.state.score} />
           <EndGame score={this.state.score} />
-          <TryAgainButton />
+          <TryAgainButton score={this.state.score} handleRestart={() => {
+            this.setState({
+              level: 0,
+              clickBirdStatus: false,
+              correctAnswer: false,
+              activeBirdId: 0,
+              randomNumBird: 0,
+              score: 0,
+            })
+          }} />
         </main>
       )
     }
@@ -88,6 +98,7 @@ export default class GuessBird extends Component {
       correctAnswer: true,
       score: this.preScore + this.state.score
     })
+    
   }
 
   isWrongBird(element) {

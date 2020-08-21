@@ -13,7 +13,7 @@ export default class QuestionBox extends Component {
         <div className='guess-info'>
         <span className='guess-bird-name' data-name={currentBird.name}>{correctAnswer ? currentBird.name : '*****'}</span>
         <hr className="my-2" />
-        <Player src={currentBird.audio} isVolume={true} />
+        <Player src={currentBird.audio} />
         </div>
       </div>
     )

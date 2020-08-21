@@ -16,7 +16,8 @@ export default class BirdCard extends Component {
                 <h3>{birdsData[level][activeBirdId - 1].name}</h3>
                 <hr className="my-2" /> 
                 <span>{birdsData[level][activeBirdId - 1].species}</span>
-                <Player src={birdsData[level][activeBirdId - 1].audio} isVolume={false}/>
+                <hr className="my-2" />
+                <Player src={birdsData[level][activeBirdId - 1].audio} />
               </div>
             </div>
             <p>{birdsData[level][activeBirdId - 1].description}</p>
