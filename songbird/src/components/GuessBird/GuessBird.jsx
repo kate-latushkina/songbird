@@ -76,7 +76,7 @@ export default class GuessBird extends Component {
   }
 
   clickBird = (elem) => {
-    if (!this.state.correctAnswer) {
+    if (!this.state.correctAnswer && !elem.childNodes[0].classList.contains('error')) {
       const { randomNumBird, level } = this.state;
       if (birdsData[level][randomNumBird].name === elem.textContent) {
         this.isCorrectBird(elem)
