@@ -24,6 +24,9 @@ main {
 div, ul, img {
   border-radius: 10px;
 }
+button {
+  outline: none !important;
+}
 .birds-choices {
   display: flex;
   justify-content: space-between;
