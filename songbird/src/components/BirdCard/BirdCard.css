@@ -1,0 +1,32 @@
+.right-bird-block {
+  border: 1px solid black;
+  width: 50%;
+  padding: 10px;
+  background-color: #32383e;
+}
+.upper-block {
+  display: flex;
+}
+.right-bird-block img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.right-bird-block audio {
+  width: 265px;
+}
+.bird-show-correct {
+  width: 100%;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.right-bird-block-info span {
+  display: block;
+}
+.my-2 {
+  background-color: rgb(67, 109, 185);
+}

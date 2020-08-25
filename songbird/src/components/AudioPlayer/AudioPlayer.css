@@ -1,0 +1,24 @@
+.rhap_container {
+  background-color: inherit;
+  box-shadow: none;
+  padding: 10px 15px 10px 0;
+}
+.rhap_time {
+  color: white;
+  margin: 0 10px;
+}
+.rhap_total-time {
+  margin: 0;
+}
+.rhap_progress-filled, .rhap_volume-bar {
+  background-color: rgb(67, 109, 185);
+}
+.rhap_button-clear {
+  color: rgb(67, 109, 185);
+}
+.rhap_controls-section {
+  flex: none;
+}
+.rhap_volume-controls {
+  min-width: 90px;
+}

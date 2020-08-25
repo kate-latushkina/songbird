@@ -1,0 +1,92 @@
+.guess-bird {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px 20px;
+  display: flex;
+  background-color: #32383e;
+}
+.guess-img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.guess-bird-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.guess-info {
+  margin-left: 30px;
+  width: 100%;
+}
+main {
+  margin: 30px auto;
+  color: white;
+}
+div, ul, img {
+  border-radius: 10px;
+}
+button {
+  outline: none !important;
+}
+.birds-choices {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.bird-show-correct .rhap_container .rhap_main {
+  display: block;
+}
+.rhap_time {
+  font-size: 14px;
+}
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+@media (max-width: 765px) {
+  .guess-bird, .guess-bird-name, .guess-img, .rhap_horizontal-reverse, .birds-choices, .upper-block, 
+  .right-bird-block img, .bird-show-correct span {
+    display: block !important;
+  }
+  .guess-img, .right-bird-block img {
+    margin: 0 auto;
+  }
+  .guess-info {
+    margin: 0;
+  }
+  .bird-show-correct {
+    margin-left: 0 !important;
+  }
+  .title-group h1 {
+    font-size: 2.5rem;
+  }
+  .guess-bird-name {
+    text-align: center;
+  }
+  .rhap_horizontal-reverse {
+    flex-direction: column;
+  }
+  .choices-block, .right-bird-block {
+    width: 100% !important;
+  }
+  .right-bird-block {
+    margin-top: 10px;
+  }
+  .bird-show-correct h3, .bird-show-correct span {
+    text-align: center;
+  }
+}
+@media (max-width: 995px) {
+  .upper-block {
+    display: block !important;
+  }
+  .bird-show-correct {
+    margin: 0;
+  }
+}
+@media (min-width: 1000px) {
+  .bird-show-correct {
+    margin-left: 10px;
+  }
+}
