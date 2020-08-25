@@ -6,10 +6,10 @@ export default class Header extends Component {
     const {level} = this.props
     const birdsGroup = [
       { groupName: 'Разминка', id: 0 },
-      { groupName: 'Воробьиные', id: 1 },
-      { groupName: 'Лесные птицы', id: 2 },
-      { groupName: 'Певчие птицы', id: 3 },
-      { groupName: 'Хищные птицы', id: 4 },
+      { groupName: 'Птицы Болот', id: 1 },
+      { groupName: 'Птицы пустынь', id: 2 },
+      { groupName: 'Тропические птицы', id: 3 },
+      { groupName: 'Зимующие птицы', id: 4 },
       { groupName: 'Морские птицы', id: 5 }
     ];
     const elements = birdsGroup.map((group) => {
